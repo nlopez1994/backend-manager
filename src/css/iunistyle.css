@@ -1,0 +1,86 @@
+
+.iunistyle input[type="text"],
+.iunistyle input[type="password"],
+.iunistyle input[type="email"],
+.iunistyle textarea {
+
+    border: none;
+    border-bottom: solid 1px grey;
+    width: 200px;
+    transition: border-color .4s;
+}
+
+.iunistyle input[type="text"]:focus,
+.iunistyle input[type="password"]:focus,
+.iunistyle input[type="email"]:focus,
+.iunistyle textarea:focus {
+    outline: none;
+    border: none;
+    border-bottom: solid 2px #00aeec;
+    box-shadow: none;
+}
+
+.iunistyle button {
+    padding: 5px 18px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    outline: none;
+}
+
+.iunistyle button.filled {
+    color: white;
+    background-color: #cd3259;
+    border: none;
+}
+
+.iunistyle button.filled:hover {
+    background-color: hotpink;
+    cursor: pointer;
+}
+
+.iunistyle .toast-container {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    z-index: 1000;
+    width: 50%;
+    min-height: 60px;
+}
+
+.iunistyle .toast-message {
+    display: table;
+    min-width: 250px;
+    min-height: 50px;
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+.iunistyle .toast-message a {
+    float: right;
+    margin-right: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.iunistyle .toast-message span {
+    display: inline-block;
+    margin: 10px 0 0 5px;
+    font-weight: bold;
+}
+
+.iunistyle .toast-message.success {
+    background-color: green;
+    color: white;
+    border: solid 2px darkgreen;
+}
+
+.iunistyle .toast-message.error{
+    background-color: red;
+    color: white;
+    border: solid 2px darkred;
+}
+
+.iunistyle .toast-message.success a,
+.iunistyle .toast-message.error a {
+    color: white;
+}
