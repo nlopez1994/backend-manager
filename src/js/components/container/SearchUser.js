@@ -19,7 +19,7 @@ class SearchUser extends Component {
                         <h3>Identificar Usuario</h3>
                         <input type="email" placeholder="user@iunigo.com" required/>
                         <button type="submit" className="filled">buscar</button>
-                    </form>                    
+                    </form>
                 </Column>
                 <Column size="3" />
             </Row>
