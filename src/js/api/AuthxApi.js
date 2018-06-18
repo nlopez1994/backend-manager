@@ -9,9 +9,6 @@ class AuthxApi {
 
     getTokenByEmail(userEmail) {
         console.debug('email user in request: ' + userEmail);
-        console.debug(JSON.stringify({
-            email: userEmail
-        }));
 
         return fetch(this.basePath, {
             method: 'POST',
