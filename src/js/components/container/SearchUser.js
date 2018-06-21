@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {Row, Column} from '../presentational/BootstrapLayout';
 import {Iunilogo} from '../presentational/Images';
 import AuthxApi from '../../api/AuthxApi';
+import AccountPage from './AccountPage';
+
+import app from '../../app.js';
 
 class SearchUser extends Component {
     constructor() {
@@ -28,6 +31,11 @@ class SearchUser extends Component {
         );
     }
 
+    componentDidMount() {
+        document.querySelectorAll('.requestedEmail')[0].value =
+            'TESTGHBFJPAPYI.CVSMOURWPX738.3916003697001+testuser@iunigo.com';
+    }
+
     searchForAccount(evt) {
         evt.preventDefault();
 
@@ -36,7 +44,8 @@ class SearchUser extends Component {
 
         this.authxAPI.getTokenByEmail(requestedEmail.value).then(
             token => {
-                console.log(token);
+                console.debug('token: ' + token);
+                app.renderApp(<AccountPage token={token} />);
             },
             err => {
                 console.log(err);
