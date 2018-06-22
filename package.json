@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack",
-    "dev-browser": "start chrome --user-data-dir=\"C:/Chrome dev session\" --disable-web-security http://localhost:8081"
+    "dev-browser": "start chrome --user-data-dir=\"C:/Chrome dev session\" --disable-web-security http://localhost:8081",
+    "dev-mac-browser": "open -n -a Google\\ Chrome --args --disable-web-security --user-data-dir=/tmp/chrome http://localhost:8081"
   },
   "author": "core",
   "license": "ISC",

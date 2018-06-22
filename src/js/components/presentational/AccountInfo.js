@@ -29,6 +29,18 @@ export const AccountInfo = ({account}) => {
                         <label>NRO DOCUMENTO</label>
                         <span>{account? account.document :''}</span>
                     </Column>
+                    <Column size="6" other="pink-header">
+                        <label>FECHA NACIMIENTO</label>
+                        <span>{account? account.birthday :''}</span>
+                    </Column>
+                    <Column size="6" other="pink-header">
+                        <label>CIUDAD</label>
+                        <span>{account? account.address.city :''}</span>
+                    </Column>
+                    <Column size="12" other="blue-header">
+                        <label>CORREO ELECTRÓNICO</label>
+                        <span>{account? account.email :''}</span>
+                    </Column>
                 </Row>
             </Column>
         </Row>

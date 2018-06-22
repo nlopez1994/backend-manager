@@ -8,6 +8,7 @@ import AccountApi from '../../api/AccountApi';
 import PolicyApi from '../../api/PolicyApi';
 
 import app from '../../app.js';
+import { VehicleInfo } from '../presentational/VehicleInfo';
 
 class AccountPage extends Component {
     constructor({token}) {
@@ -44,8 +45,10 @@ class AccountPage extends Component {
                     <Column size="12" other="iunibox">
                         <AccountInfo account={this.state.account}/>
                     </Column>
-                    <Column size="12"/>
-                    <Column size="12" other="iunibox"/>
+                    <br />
+                    <Column size="12" other="iunibox">
+                        <VehicleInfo />
+                    </Column>
                 </Column>
                 <Column size="5" other="iunibox">
                 </Column>
