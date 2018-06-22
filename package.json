@@ -4,8 +4,9 @@
   "description": "Front para ejecucion de servicios back",
   "main": "./scripts/app.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack",
+    "dev-browser": "start chrome --user-data-dir=\"C:/Chrome dev session\" --disable-web-security http://localhost:8081"
   },
   "author": "core",
   "license": "ISC",

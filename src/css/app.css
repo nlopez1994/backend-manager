@@ -7,7 +7,7 @@ body {
     height: 100%;
     min-width: 800px;
     min-height: 600px;
-    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
 }
 .row {
     width: 100%;
@@ -18,4 +18,36 @@ body {
     width: 250px;
     margin: 30px auto;
     text-align: center;
+}
+
+.iunibox {
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px #cd3259;
+    min-height: 50px;
+    font-size: 10.5pt;
+}
+
+.iunibox h5 {
+    border-bottom: solid 2px #00aeec;
+    padding-bottom: .2em;
+    padding-top: .2em;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.iunibox label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0px 2px;
+}
+
+.iunibox span {
+    margin-left: 5px;
+}
+
+.iunibox .pink-header label {
+    color: #cd3259;
+}
+.iunibox .blue-header label {
+    color: #00aeec;
 }

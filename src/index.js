@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import SearchUser from './js/components/container/SearchUser';
 
 import app from './js/app.js';
