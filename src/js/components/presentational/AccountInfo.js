@@ -5,8 +5,9 @@ import {Row, Column} from './BootstrapLayout';
 import {MaleAccountlogo, FemaleAccountlogo} from './Images';
 
 export const AccountInfo = ({account}) => {
-    const accountLogo = account && account.gender.startsWith('F') ?
-        <FemaleAccountlogo /> : <MaleAccountlogo /> ;
+    const accountLogo = account && account.gender !== null ?
+        account.gender.startsWith('F') ? <FemaleAccountlogo /> : <MaleAccountlogo /> 
+        : <MaleAccountlogo />;
 
     return (
         <Row>

@@ -33,7 +33,7 @@ class SearchUser extends Component {
 
     componentDidMount() {
         document.querySelectorAll('.requestedEmail')[0].value =
-            'TESTGHBFJPAPYI.CVSMOURWPX738.3916003697001+testuser@iunigo.com';
+            'charlie.sheen+testuser@iunigo.com';
     }
 
     searchForAccount(evt) {

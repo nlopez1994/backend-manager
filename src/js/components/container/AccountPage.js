@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import {Row, Column} from '../presentational/BootstrapLayout';
 import {Iunilogo} from '../presentational/Images';
 import {AccountInfo} from '../presentational/AccountInfo';
+import { VehicleInfo } from '../presentational/VehicleInfo';
+import { PolicyInfo } from '../presentational/PolicyInfo';
 
 import AccountApi from '../../api/AccountApi';
 import PolicyApi from '../../api/PolicyApi';
 
 import app from '../../app.js';
-import { VehicleInfo } from '../presentational/VehicleInfo';
+
 
 class AccountPage extends Component {
     constructor({token}) {
@@ -23,17 +25,6 @@ class AccountPage extends Component {
     }
 
     render() {
-        const welcomeEl = this.state.account ? 
-            <h2>{'Bienvenido ' + this.state.account.name + '!'}</h2> : 
-            <h2>{'No se ha encontrado cuenta asociada'}</h2> ;
-
-        const vehicleEl = this.state.vehicle ? 
-            <h4>{'Su ID de vehículo es ' + this.state.vehicle.vin}</h4> : 
-            <h4>{'No tiene vehículo asociado'}</h4> ;
-
-        const policyEl = this.state.policy ?
-            <h4>{'Tienes una póliza'}</h4> :
-            <h4>{'No tienes una póliza'}</h4> ;
 
         return (
             <Row>
@@ -47,10 +38,11 @@ class AccountPage extends Component {
                     </Column>
                     <br />
                     <Column size="12" other="iunibox">
-                        <VehicleInfo />
+                        <VehicleInfo vehicle={this.state.vehicle}/>
                     </Column>
                 </Column>
                 <Column size="5" other="iunibox">
+                    <PolicyInfo policy={this.state.policy} />
                 </Column>
                 <Column size="1"/>
             </Row>
