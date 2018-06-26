@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Row, Column} from '../presentational/BootstrapLayout';
 import {Iunilogo} from '../presentational/Images';
-import {AccountInfo} from '../presentational/AccountInfo';
+import { AccountInfo } from '../presentational/AccountInfo';
 import { VehicleInfo } from '../presentational/VehicleInfo';
 import { PolicyInfo } from '../presentational/PolicyInfo';
+import CreatePolicy from './CreatePolicy';
 
 import AccountApi from '../../api/AccountApi';
 import PolicyApi from '../../api/PolicyApi';
-
 import app from '../../app.js';
 
 
 class AccountPage extends Component {
     constructor({token}) {
         super();
+
         this.state = {
             'token': token,
             'accountId': app.getAccountIdFromToken(token)
         }
-
+        this.createPolicy = this.createPolicy.bind(this);
         this.accountAPI = new AccountApi();
         this.policyAPI = new PolicyApi();
     }
@@ -42,7 +43,9 @@ class AccountPage extends Component {
                     </Column>
                 </Column>
                 <Column size="5" other="iunibox">
-                    <PolicyInfo policy={this.state.policy} />
+                    <PolicyInfo policy={this.state.policy}
+                        createPolicy={this.createPolicy}
+                        planId={this.state.vehicle? this.state.vehicle.planId : ''} />
                 </Column>
                 <Column size="1"/>
             </Row>
@@ -77,6 +80,15 @@ class AccountPage extends Component {
         }).catch((err) => {
             console.log(err);
         });
+    }
+
+    createPolicy(evt){
+        evt.preventDefault();
+        app.renderApp(
+            <CreatePolicy token={this.state.token}
+                accountId={this.state.accountId}
+                vehicleId={this.state.vehicle.vin} />
+        );
     }
 }
 
